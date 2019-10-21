@@ -7,4 +7,9 @@ describe('checkout', () => {
     const expectedResult = 0;
     expect(actualResult).to.equal(expectedResult);
   });
+  it('Returns 50 when passed array conataining only `A`', () => {
+    const actualResult = checkout(['A']);
+    const expectedResult = 50;
+    expect(actualResult).to.equal(expectedResult);
+  });
 });
