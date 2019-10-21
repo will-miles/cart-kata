@@ -2,15 +2,16 @@
   "name": "cart-test",
   "version": "1.0.0",
   "description": "",
-  "main": "inedx.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha spec"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.1"
+    "mocha": "^6.2.2"
   }
 }
