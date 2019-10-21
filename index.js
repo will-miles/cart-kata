@@ -1,5 +1,7 @@
 const checkout = items => {
-  if (items[0] === 'A') return 50;
+  possibleItems = { A: 50, B: 35, C: 25, D: 12 };
+
+  if (possibleItems.hasOwnProperty(items[0])) return possibleItems[items[0]];
   return 0;
 };
 

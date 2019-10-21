@@ -12,4 +12,15 @@ describe('checkout', () => {
     const expectedResult = 50;
     expect(actualResult).to.equal(expectedResult);
   });
+  it('Returns correct value for cart conatining any 1 item', () => {
+    let actualResult = checkout(['B']);
+    let expectedResult = 35;
+    expect(actualResult).to.equal(expectedResult);
+    actualResult = checkout(['C']);
+    expectedResult = 25;
+    expect(actualResult).to.equal(expectedResult);
+    actualResult = checkout(['D']);
+    expectedResult = 12;
+    expect(actualResult).to.equal(expectedResult);
+  });
 });
