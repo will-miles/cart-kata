@@ -1,8 +1,12 @@
 const checkout = items => {
-  possibleItems = { A: 50, B: 35, C: 25, D: 12 };
+  const possibleItems = { A: 50, B: 35, C: 25, D: 12 };
+  let total = 0;
 
-  if (possibleItems.hasOwnProperty(items[0])) return possibleItems[items[0]];
-  return 0;
+  items.forEach(item => {
+    if (possibleItems.hasOwnProperty(item)) total += possibleItems[item];
+  });
+
+  return total;
 };
 
 module.exports = { checkout };

@@ -23,4 +23,9 @@ describe('checkout', () => {
     expectedResult = 12;
     expect(actualResult).to.equal(expectedResult);
   });
+  it('Returns the sum value of an array with more than 1 item, with no discount', () => {
+    const actualResult = checkout(['A', 'B']);
+    const expectedResult = 85;
+    expect(actualResult).to.equal(expectedResult);
+  });
 });
