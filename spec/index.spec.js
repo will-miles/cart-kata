@@ -28,4 +28,27 @@ describe('checkout', () => {
     const expectedResult = 85;
     expect(actualResult).to.equal(expectedResult);
   });
+  it('Returns the discounted value of a valid dicountable array', () => {
+    let actualResult = checkout(['A', 'A', 'A']);
+    let expectedResult = 140;
+    expect(actualResult).to.equal(expectedResult);
+    actualResult = checkout(['B', 'B']);
+    expectedResult = 60;
+    expect(actualResult).to.equal(expectedResult);
+  });
+  it('Returns the correct value of a complex array', () => {
+    const actualResult = checkout([
+      'A',
+      'A',
+      'A',
+      'B',
+      'B',
+      'B',
+      'C',
+      'D',
+      'D'
+    ]);
+    const expectedResult = 284;
+    expect(actualResult).to.equal(expectedResult);
+  });
 });
