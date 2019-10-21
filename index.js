@@ -10,9 +10,11 @@ console.log(
 
 standard_input.on('data', function(data) {
   if (data === '.\n') {
+    // display total cost and close program
     console.log('\n\nTotal cost = ' + checkout(scannedItems));
     process.exit();
   } else {
+    // if a viable item add to the scanned items array
     if (possibleItemsArr.indexOf(data[0]) !== -1) {
       scannedItems.push(data[0]);
       console.log(
