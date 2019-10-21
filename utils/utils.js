@@ -1,10 +1,10 @@
 const possibleItems = { A: 50, B: 35, C: 25, D: 12 };
 // Create array of all items
+const discountPrices = { A: 140, B: 60 };
 const possibleItemsArr = Object.keys(possibleItems);
 
 const checkout = items => {
   const discountNums = { A: 3, B: 2 };
-  const discountPrices = { A: 140, B: 60 };
   let total = 0;
 
   // Create object with numbers of each item scanned
@@ -35,4 +35,4 @@ const checkout = items => {
   return total;
 };
 
-module.exports = { checkout, possibleItemsArr };
+module.exports = { checkout, possibleItems, discountPrices, possibleItemsArr };

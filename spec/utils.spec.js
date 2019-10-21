@@ -1,5 +1,9 @@
 const { expect } = require('chai');
-const { checkout } = require('../utils/utils.js');
+const {
+  checkout,
+  possibleItems,
+  discountPrices
+} = require('../utils/utils.js');
 
 describe('checkout', () => {
   it('Returns 0 when empty array is input', () => {
@@ -9,31 +13,31 @@ describe('checkout', () => {
   });
   it('Returns 50 when passed array conataining only `A`', () => {
     const actualResult = checkout(['A']);
-    const expectedResult = 50;
+    const expectedResult = possibleItems.A;
     expect(actualResult).to.equal(expectedResult);
   });
   it('Returns correct value for cart conatining any 1 item', () => {
     let actualResult = checkout(['B']);
-    let expectedResult = 35;
+    let expectedResult = possibleItems.B;
     expect(actualResult).to.equal(expectedResult);
     actualResult = checkout(['C']);
-    expectedResult = 25;
+    expectedResult = possibleItems.C;
     expect(actualResult).to.equal(expectedResult);
     actualResult = checkout(['D']);
-    expectedResult = 12;
+    expectedResult = possibleItems.D;
     expect(actualResult).to.equal(expectedResult);
   });
   it('Returns the sum value of an array with more than 1 item, with no discount', () => {
     const actualResult = checkout(['A', 'B']);
-    const expectedResult = 85;
+    const expectedResult = possibleItems.A + possibleItems.B;
     expect(actualResult).to.equal(expectedResult);
   });
   it('Returns the discounted value of a valid dicountable array', () => {
     let actualResult = checkout(['A', 'A', 'A']);
-    let expectedResult = 140;
+    let expectedResult = discountPrices.A;
     expect(actualResult).to.equal(expectedResult);
     actualResult = checkout(['B', 'B']);
-    expectedResult = 60;
+    expectedResult = discountPrices.B;
     expect(actualResult).to.equal(expectedResult);
   });
   it('Returns the correct value of a complex array', () => {
