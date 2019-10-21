@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const { checkout } = require('../index.js');
+const { checkout } = require('../utils/utils.js');
 
 describe('checkout', () => {
   it('Returns 0 when empty array is input', () => {
