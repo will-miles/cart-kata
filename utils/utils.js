@@ -1,10 +1,11 @@
 const possibleItems = { A: 50, B: 35, C: 25, D: 12 };
-// Create array of all items
 const discountPrices = { A: 140, B: 60 };
+const discountNums = { A: 3, B: 2 };
+
+// Create array of all items
 const possibleItemsArr = Object.keys(possibleItems);
 
-const checkout = items => {
-  const discountNums = { A: 3, B: 2 };
+const checkout = (items) => {
   let total = 0;
 
   // Create object with numbers of each item scanned
@@ -18,7 +19,7 @@ const checkout = items => {
   const discountedItemsArr = Object.keys(discountNums);
 
   // Calculate costs of discountable items and add to total
-  discountedItemsArr.forEach(item => {
+  discountedItemsArr.forEach((item) => {
     while (totalItems[item] >= discountNums[item]) {
       total += discountPrices[item];
       totalItems[item] -= discountNums[item];
@@ -26,7 +27,7 @@ const checkout = items => {
   });
 
   // Add remaining item's costs to total
-  possibleItemsArr.forEach(item => {
+  possibleItemsArr.forEach((item) => {
     if (totalItems[item]) {
       total += totalItems[item] * possibleItems[item];
     }

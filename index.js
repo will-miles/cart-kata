@@ -9,7 +9,7 @@ console.log(
 The availabe items are: ${possibleItemsArr}\n\nWhen you have finished scanning input '.'`
 );
 
-standard_input.on('data', function(data) {
+standard_input.on('data', function (data) {
   if (data === '.\n') {
     // display total cost and close program
     console.log('\n\nTotal cost = ' + checkout(scannedItems));
